@@ -1,19 +1,18 @@
-import java.util.Scanner;
+public class VariableExample {
 
-public class EvenOddChecker {
+    int instanceVariable = 10;
+    static int staticVariable = 20;
+
+    public void display() {
+        int localVariable = 30;
+        System.out.println("Instance Variable: " + instanceVariable);
+        System.out.println("Static Variable: " + staticVariable);
+        System.out.println("Local Variable: " + localVariable);
+    }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Enter a number: ");
-        int number = scanner.nextInt();
-        
-        if (number % 2 == 0) {
-            System.out.println(number + " is an even number.");
-        } else {
-            System.out.println(number + " is an odd number.");
-        }
-        
-        scanner.close();
+        VariableExample example = new VariableExample();
+        example.display();
+        System.out.println("Accessing Static Variable from main(): " + VariableExample.staticVariable);
     }
 }
